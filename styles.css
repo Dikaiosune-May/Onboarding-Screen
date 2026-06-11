@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgba(6, 12, 24, 1);
+}
+
+.wrapper,
+.slideshow {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+}
+
+.slideshow {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.slide {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(40px);
+    transition: opacity 1.4s ease, transform 1.4s ease, visibility 1.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.grid1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.slide1 .img-frame {
+    flex: 1 1 58%;
+    width: 100%;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide1 .img-frame img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    min-width: 108%;
+    max-width: none;
+    display: block;
+}
+
+.img-frame2 {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.img-frame2 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+#lightest {
+    color: rgba(2, 107, 163, 1);
+    text-align: end;
+    flex-shrink: 0;
+    padding: 12px 16px 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+}
+
+.grid2 {
+    flex-shrink: 0;
+    padding: 0 0 24px;
+}
+
+.slide1 .grid2 > h3 {
+    margin-top: 12px;
+}
+
+.grid2 > h3 {
+    color: rgba(0, 170, 255, 1);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    line-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 15px;
+    margin-top: 24px;
+}
+
+.grid2 > h1 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 15px;
+    padding-right: 52px;
+    padding-bottom: 10px;
+    min-height: 90px;
+}
+
+.grid2 > #lighter {
+    color: rgba(72, 157, 191, 1);
+    font-size: 0.9375rem;
+    line-height: 22px;
+    padding-left: 15px;
+    padding-right: 88px;
+    min-height: 44px;
+}
+
+.bottom-ui-container {
+    padding-left: 15px;
+}
+
+.grid3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+button {
+    color: rgba(6, 12, 24, 1);
+    background-color: rgba(0, 170, 255, 1);
+    width: 100%;
+    max-width: 280px;
+    height: 56px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fly-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fly-btn::after {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-right: 2.5px solid currentColor;
+    border-top: 2.5px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.pagination-indicators {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #1a364a;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.dot.active {
+    width: 24px;
+    background-color: #0db5ff;
+    border-radius: 4px;
+}
+
+#light {
+    color: rgba(48, 109, 143, 1);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    text-align: center;
+}
